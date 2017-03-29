@@ -16,14 +16,23 @@ Window {
         x: 100
         y: 100
 
-        Button {
-            text: "Shuffle"
-            width: 60
-            height: 30
+        Row{
+            spacing: 10
+            Button {
+                text: "Shuffle"
+                width: 60
+                height: 20
 
-            onClicked: {
-                console.log("Button clicked!");
-                Script.shuffle()
+                onClicked: {
+                    console.log("Button clicked!");
+                    Script.shuffle()
+                }
+            }
+
+            Button {
+                width: 60
+                height: 20
+                text: "Solve"
             }
         }
 
