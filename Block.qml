@@ -1,24 +1,27 @@
 import QtQuick 2.0
 
 Item {
-    property alias text: label.text
+    property string label: ""
+    property int block_size: 50
+    property var position: [0,0]
+    property int margin: 5
 
-    width: 50
-    height: 50
+    width: block_size
+    height: block_size
 
-    visible: label.text != "0"
+    x: margin + block_size * position[0]
+    y: margin + block_size * position[1]
 
     Rectangle {
         anchors.fill: parent
         color: "green"
-        radius: parent.width/4
+        radius: block_size/4
 
         Text {
-            id: label
             anchors.centerIn: parent
-            text: ""
+            text: label
             font.bold: true
-            font.pixelSize: 30
+            font.pixelSize: block_size * 3 / 5
             color: "yellow"
         }
     }

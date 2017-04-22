@@ -21,9 +21,8 @@ function createBlocks(parent) {
     for (ii = 0; ii < board_size; ii++) {
         for (jj = 0; jj < board_size; jj++) {
             var block = component.createObject(parent, {
-                                               "x": parent.margin + parent.block_wid * jj,
-                                               "y": parent.margin + parent.block_wid * ii,
-                                                "text":nth
+                                                   "position": [ii, jj],
+                                                   "label":nth
                                                });
             board[nth] = block;
             nth += 1;
@@ -37,9 +36,9 @@ function createBlocks(parent) {
 function moveWest() {
     // swap array position
     if (pos0 % board_size < board_size - 1) {
-        var temp = board[pos0].text;
-        board[pos0].text = board[pos0+1].text;
-        board[pos0+1].text = temp;
+        var temp = board[pos0].label;
+        board[pos0].label = board[pos0+1].label;
+        board[pos0+1].label = temp;
         pos0 ++;
     }
 }
@@ -47,9 +46,9 @@ function moveWest() {
 function moveEast() {
     // swap array position
     if (pos0 % board_size > 0 ) {
-        var temp = board[pos0].text;
-        board[pos0].text = board[pos0 - 1].text;
-        board[pos0 - 1].text = temp;
+        var temp = board[pos0].label;
+        board[pos0].label = board[pos0 - 1].label;
+        board[pos0 - 1].label = temp;
         pos0 --;
     }
 }
@@ -57,9 +56,9 @@ function moveEast() {
 function moveSouth() {
     // swap array position
     if (pos0 >= board_size ) {
-        var temp = board[pos0].text;
-        board[pos0].text = board[pos0 - board_size].text;
-        board[pos0 - board_size].text = temp;
+        var temp = board[pos0].label;
+        board[pos0].label = board[pos0 - board_size].label;
+        board[pos0 - board_size].label = temp;
         pos0 -= board_size;
     }
 }
@@ -67,9 +66,9 @@ function moveSouth() {
 function moveNorth() {
     // swap array position
     if (pos0 < arr_len - board_size ) {
-        var temp = board[pos0].text;
-        board[pos0].text = board[pos0 + board_size].text;
-        board[pos0 + board_size].text = temp;
+        var temp = board[pos0].label;
+        board[pos0].label = board[pos0 + board_size].label;
+        board[pos0 + board_size].label = temp;
         pos0 += board_size;
     }
 }
