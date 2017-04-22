@@ -4,8 +4,8 @@ import "script.js" as Script
 
 Item {
     id: game_board
-    property var margin: 5
-    property var block_wid: 50
+    property int margin: 5
+    property int block_wid: 50
 
     width: block_wid * 3 + 2 * margin
     height: block_wid * 3 + 2 * margin
@@ -22,7 +22,7 @@ Item {
     //anchors.centerIn: parent
 
     Component.onCompleted: {
-        Script.createBlocks(game_board);
+        Script.board.init(board);
     }
 
     focus: true
