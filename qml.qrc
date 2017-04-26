@@ -2,7 +2,8 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Block.qml</file>
-        <file>script.js</file>
+        <file>board.js</file>
         <file>GameBoard.qml</file>
+        <file>blocks.js</file>
     </qresource>
 </RCC>

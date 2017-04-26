@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import "script.js" as Script
+import "board.js" as BoardJS
 
 
 Item {
@@ -22,29 +22,29 @@ Item {
     //anchors.centerIn: parent
 
     Component.onCompleted: {
-        Script.board.init(board);
+        BoardJS.board.init(board);
     }
 
     focus: true
 
     Keys.onLeftPressed: {
         console.log("Left key pressed.");
-        Script.moveWest();
+        BoardJS.board.moveWest();
     }
 
     Keys.onRightPressed: {
         console.log("Right key pressed.");
-        Script.moveEast();
+        BoardJS.board.moveEast();
     }
 
     Keys.onUpPressed: {
         console.log("Up key pressed.");
-        Script.moveNorth();
+        BoardJS.board.moveNorth();
     }
 
     Keys.onDownPressed: {
         console.log("Down key pressed.");
-        Script.moveSouth();
+        BoardJS.board.moveSouth();
     }
 
     MouseArea {

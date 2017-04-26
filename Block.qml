@@ -9,8 +9,8 @@ Item {
     width: block_size
     height: block_size
 
-    x: margin + block_size * position[0]
-    y: margin + block_size * position[1]
+    x: margin + block_size * position[1]
+    y: margin + block_size * position[0]
 
     Rectangle {
         anchors.fill: parent
